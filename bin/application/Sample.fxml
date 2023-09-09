@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <center>
+      <Pane fx:id="scenePane" prefHeight="350.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane layoutX="-6.0" prefHeight="350.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Welcome">
+                     <content>
+                        <HBox prefHeight="400.0" prefWidth="400.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handleChooseFileButtonClick" prefHeight="250.0" prefWidth="250.0" text="Select Swipe File&#10; (Click Open Button to Open File)" textAlignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#handleChooseFileButtonClick2" prefHeight="250.0" prefWidth="250.0" text="Select Roster File &#10;(Click Open Button to Open File)" textAlignment="CENTER" />
+                           </children>
+                        </HBox>
+                     </content>
+                  </Tab>
+                <Tab text="Menu">
+                     <content>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handleExitButtonClick" prefHeight="150.0" prefWidth="200.0" text="0 - Exit" />
+                              <Button mnemonicParsing="false" onAction="#handleLoadLogClick" prefHeight="150.0" prefWidth="200.0" text="A - Load Log" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#handlePrintCollectionLogClick" prefHeight="150.0" prefWidth="200.0" text="B - Print Log" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" onAction="#handlePrintCountLogClick" prefHeight="150.0" prefWidth="200.0" text="C - Print Log &#10;Count" textAlignment="CENTER" GridPane.rowIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#handleLoadRosterClick" prefHeight="150.0" prefWidth="200.0" text="D - Load &#10;Roster" textAlignment="CENTER" GridPane.columnIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#handlePrintCollectionRosterClick" prefHeight="150.0" prefWidth="200.0" text="E - Print Roster" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#handlePrintCountRosterClick" prefHeight="150.0" prefWidth="200.0" text="F - Print Roster &#10;Count" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" onAction="#handleTimesNotInClass" prefHeight="150.0" prefWidth="200.0" text="G - Not In &#10;Class" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#handleFirstStudent" prefHeight="150.0" prefWidth="200.0" text="K - First &#10;Student" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#handleLateStudents" prefHeight="150.0" prefWidth="200.0" text="J - Late &#10;Students" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" onAction="#handleAllTimesCheckedIn" prefHeight="150.0" prefWidth="200.0" text="I - All Times &#10;Checked In" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#handleTimesInAndOut" prefHeight="150.0" prefWidth="200.0" text="H - Times In &#10;And Out" textAlignment="CENTER" GridPane.columnIndex="2" />
+                              <Button mnemonicParsing="false" onAction="#handlePrintAttendanceData" prefHeight="150.0" prefWidth="200.0" text="L - Print &#10;Attendance &#10;Data" textAlignment="CENTER" GridPane.columnIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#handleIsPresent" prefHeight="150.0" prefWidth="200.0" text="M - Is Present" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#handlePrintQuery" prefHeight="150.0" prefWidth="200.0" text="R - Print Query" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Button fx:id="submit" mnemonicParsing="false" onAction="#handleAllCheckedInBefore" prefHeight="150.0" prefWidth="200.0" text="O - Checked &#10;Before" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#handleAttendanceCount" prefHeight="150.0" prefWidth="200.0" text="P - &#10;Attendance &#10;Count" textAlignment="CENTER" GridPane.columnIndex="4" />
+                              <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="200.0" text="Thank you!" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#handleAllCheckedIn" prefHeight="150.0" prefWidth="200.0" text="N - All&#10;Students &#10;Checked In" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" onAction="#handlePrintCount" prefHeight="150.0" prefWidth="200.0" text="S - Query &#10;Count" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </content></Tab>
+                  <Tab text="Personal Info">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Text layoutX="8.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: Seline Qureshi" />
+                              <Text layoutX="8.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UIN: 631003945" />
+                              <Text layoutX="8.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: qurs3l@tamu.edu" wrappingWidth="140.92333984375" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </center>
+   <bottom>
+      <TextArea fx:id="t" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
